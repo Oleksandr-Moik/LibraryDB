@@ -29,7 +29,13 @@ namespace LibraryDB
 
         private void button3_Click(object sender, EventArgs e)
         {
-            new FormIssuanseRecord().ShowDialog();
+            try
+            {
+                new FormIssuanseRecord().ShowDialog();
+            } catch (Exception exp)
+            {
+                MessageBox.Show(exp.StackTrace);
+            }
         }
     }
 }
