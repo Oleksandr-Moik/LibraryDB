@@ -229,7 +229,6 @@ namespace LibraryDB
             this.comboBox_selectColumn.Name = "comboBox_selectColumn";
             this.comboBox_selectColumn.Size = new System.Drawing.Size(172, 21);
             this.comboBox_selectColumn.TabIndex = 20;
-            this.comboBox_selectColumn.SelectedIndexChanged += new System.EventHandler(this.select_SelectedIndexChanged);
             // 
             // label3
             // 
