@@ -22,7 +22,6 @@ namespace LibraryDB
             this.Validate();
             this.studentBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.libraryDataSet);
-
         }
 
         private void FormStudent_Load(object sender, EventArgs e)

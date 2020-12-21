@@ -64,6 +64,12 @@
     <Compile Include="FormIssuanseRecord.Designer.cs">
       <DependentUpon>FormIssuanseRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQResult.Designer.cs">
+      <DependentUpon>FormQResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIssuanseRecord.resx">
       <DependentUpon>FormIssuanseRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQResult.resx">
+      <DependentUpon>FormQResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStudent.resx">
       <DependentUpon>FormStudent.cs</DependentUpon>
