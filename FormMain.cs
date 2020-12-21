@@ -37,5 +37,11 @@ namespace LibraryDB
                 MessageBox.Show(exp.StackTrace);
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // queries
+            new FromQueries().ShowDialog();
+        }
     }
 }
