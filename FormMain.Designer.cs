@@ -36,9 +36,10 @@ namespace LibraryDB
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +47,7 @@ namespace LibraryDB
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(5, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 25);
             this.button1.TabIndex = 0;
@@ -57,7 +58,7 @@ namespace LibraryDB
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(5, 48);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 25);
             this.button2.TabIndex = 1;
@@ -68,7 +69,7 @@ namespace LibraryDB
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(5, 90);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 25);
             this.button3.TabIndex = 2;
@@ -79,7 +80,7 @@ namespace LibraryDB
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(189, 33);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(194, 25);
             this.button4.TabIndex = 3;
@@ -119,16 +120,6 @@ namespace LibraryDB
             this.checkBox2.Text = "Student accounting";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(187, 160);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(196, 26);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "Execurte complex queries";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -139,6 +130,16 @@ namespace LibraryDB
             this.checkBox1.Text = "Given books";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(187, 160);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(196, 26);
+            this.button5.TabIndex = 26;
+            this.button5.Text = "Execurte complex queries";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
@@ -146,21 +147,32 @@ namespace LibraryDB
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Location = new System.Drawing.Point(12, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(125, 146);
+            this.groupBox1.Size = new System.Drawing.Size(125, 128);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tables";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 163);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(125, 23);
+            this.button6.TabIndex = 30;
+            this.button6.Text = "Report";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "College library";
@@ -183,6 +195,7 @@ namespace LibraryDB
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button6;
     }
 }
 

@@ -77,5 +77,10 @@ namespace LibraryDB
                 MessageBox.Show("Select at least one query!!!");
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new FormReposrts().Show();
+        }
     }
 }
