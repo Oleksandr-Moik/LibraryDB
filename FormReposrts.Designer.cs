@@ -36,8 +36,10 @@ namespace LibraryDB
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.libraryDataSet1 = new LibraryDB.LibraryDataSet();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -80,6 +82,7 @@ namespace LibraryDB
             this.button1.TabIndex = 0;
             this.button1.Text = "Book";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -99,7 +102,12 @@ namespace LibraryDB
             this.button3.TabIndex = 0;
             this.button3.Text = "Recorders";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button2_Click);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // libraryDataSet1
+            // 
+            this.libraryDataSet1.DataSetName = "LibraryDataSet";
+            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // FormReposrts
             // 
@@ -112,6 +120,7 @@ namespace LibraryDB
             this.Text = "FormReposrts";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +134,6 @@ namespace LibraryDB
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;
+        private LibraryDataSet libraryDataSet1;
     }
 }

@@ -37,8 +37,8 @@ namespace LibraryDB
             System.Windows.Forms.Label publishCityLabel;
             System.Windows.Forms.Label pagesLabel;
             System.Windows.Forms.Label priceLabel;
-            System.Windows.Forms.Label yearLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBook));
+            System.Windows.Forms.Label yearLabel;
             this.libraryDataSet = new LibraryDB.LibraryDataSet();
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookTableAdapter = new LibraryDB.LibraryDataSetTableAdapters.BookTableAdapter();
@@ -58,7 +58,6 @@ namespace LibraryDB
             this.bookBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.yearNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.pagesNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.bookIdLabel2 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -84,6 +83,7 @@ namespace LibraryDB
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -91,7 +91,7 @@ namespace LibraryDB
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.yearTextBox = new System.Windows.Forms.TextBox();
             bookIdLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             authorLabel = new System.Windows.Forms.Label();
@@ -106,7 +106,6 @@ namespace LibraryDB
             this.bookBindingNavigator.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yearNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagesNumericUpDown)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).BeginInit();
@@ -122,7 +121,7 @@ namespace LibraryDB
             bookIdLabel.Location = new System.Drawing.Point(238, 81);
             bookIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             bookIdLabel.Name = "bookIdLabel";
-            bookIdLabel.Size = new System.Drawing.Size(47, 13);
+            bookIdLabel.Size = new System.Drawing.Size(51, 15);
             bookIdLabel.TabIndex = 1;
             bookIdLabel.Text = "Book Id:";
             // 
@@ -132,7 +131,7 @@ namespace LibraryDB
             nameLabel.Location = new System.Drawing.Point(238, 104);
             nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.Size = new System.Drawing.Size(44, 15);
             nameLabel.TabIndex = 3;
             nameLabel.Text = "Name:";
             // 
@@ -142,7 +141,7 @@ namespace LibraryDB
             authorLabel.Location = new System.Drawing.Point(238, 127);
             authorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             authorLabel.Name = "authorLabel";
-            authorLabel.Size = new System.Drawing.Size(41, 13);
+            authorLabel.Size = new System.Drawing.Size(45, 15);
             authorLabel.TabIndex = 5;
             authorLabel.Text = "Author:";
             // 
@@ -152,7 +151,7 @@ namespace LibraryDB
             publishOfficeLabel.Location = new System.Drawing.Point(238, 150);
             publishOfficeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             publishOfficeLabel.Name = "publishOfficeLabel";
-            publishOfficeLabel.Size = new System.Drawing.Size(75, 13);
+            publishOfficeLabel.Size = new System.Drawing.Size(85, 15);
             publishOfficeLabel.TabIndex = 7;
             publishOfficeLabel.Text = "Publish Office:";
             // 
@@ -162,7 +161,7 @@ namespace LibraryDB
             publishCityLabel.Location = new System.Drawing.Point(238, 172);
             publishCityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             publishCityLabel.Name = "publishCityLabel";
-            publishCityLabel.Size = new System.Drawing.Size(64, 13);
+            publishCityLabel.Size = new System.Drawing.Size(73, 15);
             publishCityLabel.TabIndex = 9;
             publishCityLabel.Text = "Publish City:";
             // 
@@ -172,7 +171,7 @@ namespace LibraryDB
             pagesLabel.Location = new System.Drawing.Point(238, 195);
             pagesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             pagesLabel.Name = "pagesLabel";
-            pagesLabel.Size = new System.Drawing.Size(40, 13);
+            pagesLabel.Size = new System.Drawing.Size(45, 15);
             pagesLabel.TabIndex = 11;
             pagesLabel.Text = "Pages:";
             // 
@@ -182,19 +181,9 @@ namespace LibraryDB
             priceLabel.Location = new System.Drawing.Point(238, 218);
             priceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             priceLabel.Name = "priceLabel";
-            priceLabel.Size = new System.Drawing.Size(34, 13);
+            priceLabel.Size = new System.Drawing.Size(38, 15);
             priceLabel.TabIndex = 13;
             priceLabel.Text = "Price:";
-            // 
-            // yearLabel
-            // 
-            yearLabel.AutoSize = true;
-            yearLabel.Location = new System.Drawing.Point(238, 240);
-            yearLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            yearLabel.Name = "yearLabel";
-            yearLabel.Size = new System.Drawing.Size(32, 13);
-            yearLabel.TabIndex = 15;
-            yearLabel.Text = "Year:";
             // 
             // libraryDataSet
             // 
@@ -255,13 +244,13 @@ namespace LibraryDB
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -271,7 +260,7 @@ namespace LibraryDB
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // bindingNavigatorMoveFirstItem
@@ -280,7 +269,7 @@ namespace LibraryDB
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -289,7 +278,7 @@ namespace LibraryDB
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
@@ -318,7 +307,7 @@ namespace LibraryDB
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -327,7 +316,7 @@ namespace LibraryDB
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
@@ -340,7 +329,7 @@ namespace LibraryDB
             this.bookBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bookBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bookBindingNavigatorSaveItem.Image")));
             this.bookBindingNavigatorSaveItem.Name = "bookBindingNavigatorSaveItem";
-            this.bookBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
+            this.bookBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.bookBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.bookBindingNavigatorSaveItem.Click += new System.EventHandler(this.bookBindingNavigatorSaveItem_Click);
             // 
@@ -358,7 +347,8 @@ namespace LibraryDB
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(this.yearNumericUpDown);
+            this.tabPage1.Controls.Add(this.yearTextBox);
+            this.tabPage1.Controls.Add(yearLabel);
             this.tabPage1.Controls.Add(this.pagesNumericUpDown);
             this.tabPage1.Controls.Add(this.bookIdLabel2);
             this.tabPage1.Controls.Add(bookIdLabel);
@@ -373,7 +363,6 @@ namespace LibraryDB
             this.tabPage1.Controls.Add(pagesLabel);
             this.tabPage1.Controls.Add(priceLabel);
             this.tabPage1.Controls.Add(this.priceTextBox);
-            this.tabPage1.Controls.Add(yearLabel);
             this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
@@ -384,28 +373,19 @@ namespace LibraryDB
             this.tabPage1.Text = "Список";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // yearNumericUpDown
-            // 
-            this.yearNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bookBindingSource, "Year", true));
-            this.yearNumericUpDown.Location = new System.Drawing.Point(317, 238);
-            this.yearNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
-            this.yearNumericUpDown.Name = "yearNumericUpDown";
-            this.yearNumericUpDown.Size = new System.Drawing.Size(156, 20);
-            this.yearNumericUpDown.TabIndex = 20;
-            // 
             // pagesNumericUpDown
             // 
             this.pagesNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bookBindingSource, "Pages", true));
-            this.pagesNumericUpDown.Location = new System.Drawing.Point(317, 193);
+            this.pagesNumericUpDown.Location = new System.Drawing.Point(329, 193);
             this.pagesNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.pagesNumericUpDown.Name = "pagesNumericUpDown";
-            this.pagesNumericUpDown.Size = new System.Drawing.Size(156, 20);
+            this.pagesNumericUpDown.Size = new System.Drawing.Size(157, 20);
             this.pagesNumericUpDown.TabIndex = 19;
             // 
             // bookIdLabel2
             // 
             this.bookIdLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "BookId", true));
-            this.bookIdLabel2.Location = new System.Drawing.Point(317, 76);
+            this.bookIdLabel2.Location = new System.Drawing.Point(329, 76);
             this.bookIdLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bookIdLabel2.Name = "bookIdLabel2";
             this.bookIdLabel2.Size = new System.Drawing.Size(75, 19);
@@ -415,7 +395,7 @@ namespace LibraryDB
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(317, 102);
+            this.nameTextBox.Location = new System.Drawing.Point(329, 102);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(157, 20);
@@ -424,7 +404,7 @@ namespace LibraryDB
             // authorTextBox
             // 
             this.authorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "Author", true));
-            this.authorTextBox.Location = new System.Drawing.Point(317, 124);
+            this.authorTextBox.Location = new System.Drawing.Point(329, 124);
             this.authorTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.authorTextBox.Name = "authorTextBox";
             this.authorTextBox.Size = new System.Drawing.Size(157, 20);
@@ -433,7 +413,7 @@ namespace LibraryDB
             // publishOfficeTextBox
             // 
             this.publishOfficeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "PublishOffice", true));
-            this.publishOfficeTextBox.Location = new System.Drawing.Point(317, 147);
+            this.publishOfficeTextBox.Location = new System.Drawing.Point(329, 147);
             this.publishOfficeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.publishOfficeTextBox.Name = "publishOfficeTextBox";
             this.publishOfficeTextBox.Size = new System.Drawing.Size(157, 20);
@@ -442,7 +422,7 @@ namespace LibraryDB
             // publishCityTextBox
             // 
             this.publishCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "PublishCity", true));
-            this.publishCityTextBox.Location = new System.Drawing.Point(317, 170);
+            this.publishCityTextBox.Location = new System.Drawing.Point(329, 170);
             this.publishCityTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.publishCityTextBox.Name = "publishCityTextBox";
             this.publishCityTextBox.Size = new System.Drawing.Size(157, 20);
@@ -451,7 +431,7 @@ namespace LibraryDB
             // priceTextBox
             // 
             this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "Price", true));
-            this.priceTextBox.Location = new System.Drawing.Point(317, 215);
+            this.priceTextBox.Location = new System.Drawing.Point(329, 215);
             this.priceTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(157, 20);
@@ -651,6 +631,18 @@ namespace LibraryDB
             this.comboBox4.TabIndex = 0;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.Location = new System.Drawing.Point(0, 385);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(134, 28);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Exit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label1);
@@ -730,17 +722,22 @@ namespace LibraryDB
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // button2
+            // yearLabel
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.Location = new System.Drawing.Point(0, 385);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            yearLabel.AutoSize = true;
+            yearLabel.Location = new System.Drawing.Point(238, 240);
+            yearLabel.Name = "yearLabel";
+            yearLabel.Size = new System.Drawing.Size(35, 15);
+            yearLabel.TabIndex = 19;
+            yearLabel.Text = "Year:";
+            // 
+            // yearTextBox
+            // 
+            this.yearTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bookBindingSource, "Year", true));
+            this.yearTextBox.Location = new System.Drawing.Point(329, 237);
+            this.yearTextBox.Name = "yearTextBox";
+            this.yearTextBox.Size = new System.Drawing.Size(157, 20);
+            this.yearTextBox.TabIndex = 21;
             // 
             // FormBook
             // 
@@ -762,7 +759,6 @@ namespace LibraryDB
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.yearNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagesNumericUpDown)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bookDataGridView)).EndInit();
@@ -826,11 +822,11 @@ namespace LibraryDB
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.NumericUpDown yearNumericUpDown;
         private System.Windows.Forms.NumericUpDown pagesNumericUpDown;
         private System.Windows.Forms.Label bookIdLabel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox yearTextBox;
     }
 }

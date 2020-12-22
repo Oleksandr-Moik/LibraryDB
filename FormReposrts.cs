@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,20 @@ namespace LibraryDB
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportDocument reportDocument = new ReportDocument();
+            reportDocument.Load("BooksReport.rpt");
+            reportDocument.SetDataSource(libraryDataSet1.Book as DataTable);
+            crystalReportViewer1.ReportSource = reportDocument;
+        }
+
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

@@ -19,9 +19,23 @@ namespace LibraryDB
 
         private void issuanseRecordBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.issuanseRecordBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.libraryDataSet);
+            try
+            {
+                this.Validate();
+                this.issuanseRecordBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.libraryDataSet);
+            }
+            catch (Exception exp)
+            {
+                if (exp.Message.Contains("trigger"))
+                {
+                    MessageBox.Show("Enter coret return date");
+                }
+                else
+                {
+                    MessageBox.Show(exp.Message);
+                }
+            }
         }
 
         private void FormIssuanseRecord_Load(object sender, EventArgs e)

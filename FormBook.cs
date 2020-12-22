@@ -19,9 +19,22 @@ namespace LibraryDB
 
         private void bookBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.bookBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.libraryDataSet);
+            try
+            {
+                this.Validate();
+                this.bookBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.libraryDataSet);
+            }catch (Exception exp)
+            {
+                if (exp.Message.Contains("trigger"))
+                {
+                    MessageBox.Show("Entered invalid book publish year");
+                }
+                else
+                {
+                    MessageBox.Show(exp.Message);
+                }
+            }
         }
 
         private void FormBook_Load(object sender, EventArgs e)
