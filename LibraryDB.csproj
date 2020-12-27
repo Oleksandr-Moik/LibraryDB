@@ -196,6 +196,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportTest.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddStudent.resx">
+      <DependentUpon>FormAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDeleteRecord.resx">
       <DependentUpon>FormDeleteRecord.cs</DependentUpon>
     </EmbeddedResource>

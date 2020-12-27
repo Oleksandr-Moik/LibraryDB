@@ -23,19 +23,25 @@ namespace LibraryDB
         private void button1_Click(object sender, EventArgs e)
         {
             connection.Open();
-            SqlCommand cmdGet = new SqlCommand();
-            cmdGet.Connection = connection;
-            cmdGet.CommandType = CommandType.StoredProcedure;
-            cmdGet.CommandText = "del";
-            cmdGet.Parameters.Add("@ids", SqlDbType.Int).Value = textBox1.Text;
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "delRecord";
+            command.Parameters.Add("@id", SqlDbType.Int).Value =  Int32.Parse(textBox1.Text);
             try
             {
-                cmdGet.ExecuteNonQuery();
-                MessageBox.Show("Succes deleted!");
+                command.ExecuteNonQuery();
+                MessageBox.Show("Succesfuly deleted!");
+                textBox1.Text = "";
             }
-            catch
-            { }
-            connection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to remove \n\n" + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }
