@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Configuration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LibraryDB
 {
     public partial class FormStudent : Form
     {
+        SqlConnection connection;
+
         public FormStudent()
         {
             InitializeComponent();
+            connection = new SqlConnection(FormMain.ConnectionString);
         }
 
         private void studentBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -137,6 +142,42 @@ namespace LibraryDB
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand sqlCommand = new SqlCommand("INSERT INTO Student VALUES " +
+                $"('{firstNameTextBox.Text}','{surNameTextBox.Text}','{byFatherTextBox.Text}'," +
+                $"'{groupTextBox.Text}','{birthDateDateTimePicker.Value.ToString()}','{phoneNumberTextBox.Text}')", connection);
+            sqlCommand.ExecuteNonQuery();
+            this.studentTableAdapter.Fill(this.libraryDataSet.Student);
+            listBox1.SelectedIndex = listBox1.Items.Count - 1;
+            connection.Close();
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand sqlCommand = new SqlCommand($"UPDATE Student SET " +
+                $"FirstName = '{firstNameTextBox.Text}', SurName = '{surNameTextBox.Text}'," +
+                $"ByFather = '{byFatherTextBox.Text}', [Group] = '{groupTextBox.Text}', " +
+                $"BirthDate = '{birthDateDateTimePicker.Value}', PhoneNumber = '{phoneNumberTextBox.Text}'" +
+                $"WHERE StudentId = {studentIdLabel1.Text}", connection);
+            sqlCommand.ExecuteNonQuery();
+            this.studentTableAdapter.Fill(this.libraryDataSet.Student);
+            connection.Close();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand($"DELETE Student WHERE StudentId = {studentIdLabel1.Text}", connection);
+            command.ExecuteNonQuery();
+            this.studentTableAdapter.Fill(this.libraryDataSet.Student);
+            connection.Close();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace LibraryDB
 {
     public partial class FormMain : Form
     {
+        public static string ConnectionString = Properties.Settings.Default.LibraryConnectionString;
         public FormMain()
         {
             InitializeComponent();
@@ -81,6 +82,31 @@ namespace LibraryDB
         private void button6_Click(object sender, EventArgs e)
         {
             new FormReposrts().Show();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            new FormAddStudent().Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new FormDeleteRecord().Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

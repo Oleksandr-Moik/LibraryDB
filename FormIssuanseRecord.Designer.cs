@@ -41,6 +41,9 @@ namespace LibraryDB
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIssuanseRecord));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Add = new System.Windows.Forms.Button();
             this.recordIdLabel1 = new System.Windows.Forms.Label();
             this.issuanseRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDataSet = new LibraryDB.LibraryDataSet();
@@ -114,50 +117,45 @@ namespace LibraryDB
             // recordIdLabel
             // 
             recordIdLabel.AutoSize = true;
-            recordIdLabel.Location = new System.Drawing.Point(230, 118);
-            recordIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            recordIdLabel.Location = new System.Drawing.Point(307, 145);
             recordIdLabel.Name = "recordIdLabel";
-            recordIdLabel.Size = new System.Drawing.Size(57, 13);
+            recordIdLabel.Size = new System.Drawing.Size(73, 17);
             recordIdLabel.TabIndex = 1;
             recordIdLabel.Text = "Record Id:";
             // 
             // dateOfIssueLabel
             // 
             dateOfIssueLabel.AutoSize = true;
-            dateOfIssueLabel.Location = new System.Drawing.Point(230, 142);
-            dateOfIssueLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dateOfIssueLabel.Location = new System.Drawing.Point(307, 175);
             dateOfIssueLabel.Name = "dateOfIssueLabel";
-            dateOfIssueLabel.Size = new System.Drawing.Size(75, 13);
+            dateOfIssueLabel.Size = new System.Drawing.Size(98, 17);
             dateOfIssueLabel.TabIndex = 3;
             dateOfIssueLabel.Text = "Date Of Issue:";
             // 
             // dateOfReturnLabel
             // 
             dateOfReturnLabel.AutoSize = true;
-            dateOfReturnLabel.Location = new System.Drawing.Point(230, 165);
-            dateOfReturnLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dateOfReturnLabel.Location = new System.Drawing.Point(307, 203);
             dateOfReturnLabel.Name = "dateOfReturnLabel";
-            dateOfReturnLabel.Size = new System.Drawing.Size(82, 13);
+            dateOfReturnLabel.Size = new System.Drawing.Size(108, 17);
             dateOfReturnLabel.TabIndex = 5;
             dateOfReturnLabel.Text = "Date Of Return:";
             // 
             // studentIdLabel
             // 
             studentIdLabel.AutoSize = true;
-            studentIdLabel.Location = new System.Drawing.Point(230, 187);
-            studentIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            studentIdLabel.Location = new System.Drawing.Point(307, 230);
             studentIdLabel.Name = "studentIdLabel";
-            studentIdLabel.Size = new System.Drawing.Size(47, 13);
+            studentIdLabel.Size = new System.Drawing.Size(61, 17);
             studentIdLabel.TabIndex = 7;
             studentIdLabel.Text = "Student:";
             // 
             // bookIdLabel
             // 
             bookIdLabel.AutoSize = true;
-            bookIdLabel.Location = new System.Drawing.Point(230, 212);
-            bookIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            bookIdLabel.Location = new System.Drawing.Point(307, 261);
             bookIdLabel.Name = "bookIdLabel";
-            bookIdLabel.Size = new System.Drawing.Size(66, 13);
+            bookIdLabel.Size = new System.Drawing.Size(85, 17);
             bookIdLabel.TabIndex = 9;
             bookIdLabel.Text = "Book Name:";
             // 
@@ -165,16 +163,19 @@ namespace LibraryDB
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(136, 25);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Location = new System.Drawing.Point(181, 31);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(568, 415);
+            this.tabControl1.Size = new System.Drawing.Size(757, 511);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.btn_Update);
+            this.tabPage1.Controls.Add(this.btn_Delete);
+            this.tabPage1.Controls.Add(this.btn_Add);
             this.tabPage1.Controls.Add(recordIdLabel);
             this.tabPage1.Controls.Add(this.recordIdLabel1);
             this.tabPage1.Controls.Add(dateOfIssueLabel);
@@ -186,22 +187,49 @@ namespace LibraryDB
             this.tabPage1.Controls.Add(bookIdLabel);
             this.tabPage1.Controls.Add(this.bookIdComboBox);
             this.tabPage1.Controls.Add(this.listBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage1.Size = new System.Drawing.Size(560, 389);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(749, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(421, 292);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(96, 26);
+            this.btn_Update.TabIndex = 20;
+            this.btn_Update.Text = "Update";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Location = new System.Drawing.Point(528, 292);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(96, 26);
+            this.btn_Delete.TabIndex = 19;
+            this.btn_Delete.Text = "Delete";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            // 
+            // btn_Add
+            // 
+            this.btn_Add.Location = new System.Drawing.Point(314, 292);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(96, 26);
+            this.btn_Add.TabIndex = 18;
+            this.btn_Add.Text = "Create";
+            this.btn_Add.UseVisualStyleBackColor = true;
             // 
             // recordIdLabel1
             // 
             this.recordIdLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.issuanseRecordBindingSource, "RecordId", true));
-            this.recordIdLabel1.Location = new System.Drawing.Point(316, 118);
-            this.recordIdLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.recordIdLabel1.Location = new System.Drawing.Point(421, 145);
             this.recordIdLabel1.Name = "recordIdLabel1";
-            this.recordIdLabel1.Size = new System.Drawing.Size(150, 19);
+            this.recordIdLabel1.Size = new System.Drawing.Size(200, 23);
             this.recordIdLabel1.TabIndex = 2;
             this.recordIdLabel1.Text = "label1";
             // 
@@ -218,19 +246,19 @@ namespace LibraryDB
             // dateOfIssueDateTimePicker
             // 
             this.dateOfIssueDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.issuanseRecordBindingSource, "DateOfIssue", true));
-            this.dateOfIssueDateTimePicker.Location = new System.Drawing.Point(316, 139);
-            this.dateOfIssueDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateOfIssueDateTimePicker.Location = new System.Drawing.Point(421, 171);
+            this.dateOfIssueDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateOfIssueDateTimePicker.Name = "dateOfIssueDateTimePicker";
-            this.dateOfIssueDateTimePicker.Size = new System.Drawing.Size(151, 20);
+            this.dateOfIssueDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dateOfIssueDateTimePicker.TabIndex = 4;
             // 
             // dateOfReturnDateTimePicker
             // 
             this.dateOfReturnDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.issuanseRecordBindingSource, "DateOfReturn", true));
-            this.dateOfReturnDateTimePicker.Location = new System.Drawing.Point(316, 162);
-            this.dateOfReturnDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateOfReturnDateTimePicker.Location = new System.Drawing.Point(421, 199);
+            this.dateOfReturnDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateOfReturnDateTimePicker.Name = "dateOfReturnDateTimePicker";
-            this.dateOfReturnDateTimePicker.Size = new System.Drawing.Size(151, 20);
+            this.dateOfReturnDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dateOfReturnDateTimePicker.TabIndex = 6;
             // 
             // studentIdComboBox
@@ -240,10 +268,10 @@ namespace LibraryDB
             this.studentIdComboBox.DataSource = this.studentBindingSource;
             this.studentIdComboBox.DisplayMember = "FirstName";
             this.studentIdComboBox.FormattingEnabled = true;
-            this.studentIdComboBox.Location = new System.Drawing.Point(316, 184);
-            this.studentIdComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentIdComboBox.Location = new System.Drawing.Point(421, 226);
+            this.studentIdComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentIdComboBox.Name = "studentIdComboBox";
-            this.studentIdComboBox.Size = new System.Drawing.Size(151, 21);
+            this.studentIdComboBox.Size = new System.Drawing.Size(200, 24);
             this.studentIdComboBox.TabIndex = 8;
             this.studentIdComboBox.ValueMember = "StudentId";
             // 
@@ -259,10 +287,10 @@ namespace LibraryDB
             this.bookIdComboBox.DataSource = this.bookBindingSource;
             this.bookIdComboBox.DisplayMember = "Name";
             this.bookIdComboBox.FormattingEnabled = true;
-            this.bookIdComboBox.Location = new System.Drawing.Point(316, 210);
-            this.bookIdComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookIdComboBox.Location = new System.Drawing.Point(421, 258);
+            this.bookIdComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookIdComboBox.Name = "bookIdComboBox";
-            this.bookIdComboBox.Size = new System.Drawing.Size(151, 21);
+            this.bookIdComboBox.Size = new System.Drawing.Size(200, 24);
             this.bookIdComboBox.TabIndex = 10;
             this.bookIdComboBox.ValueMember = "BookId";
             // 
@@ -274,20 +302,21 @@ namespace LibraryDB
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(5, 6);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(7, 7);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(197, 381);
+            this.listBox1.Size = new System.Drawing.Size(261, 468);
             this.listBox1.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.issuanseRecordDataGridView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(560, 389);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(749, 482);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Таблиця";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -320,8 +349,8 @@ namespace LibraryDB
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.issuanseRecordDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.issuanseRecordDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.issuanseRecordDataGridView.Location = new System.Drawing.Point(2, 2);
-            this.issuanseRecordDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.issuanseRecordDataGridView.Location = new System.Drawing.Point(3, 2);
+            this.issuanseRecordDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.issuanseRecordDataGridView.Name = "issuanseRecordDataGridView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -333,7 +362,7 @@ namespace LibraryDB
             this.issuanseRecordDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.issuanseRecordDataGridView.RowHeadersWidth = 51;
             this.issuanseRecordDataGridView.RowTemplate.Height = 24;
-            this.issuanseRecordDataGridView.Size = new System.Drawing.Size(556, 385);
+            this.issuanseRecordDataGridView.Size = new System.Drawing.Size(743, 478);
             this.issuanseRecordDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -416,7 +445,7 @@ namespace LibraryDB
             this.issuanseRecordBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.issuanseRecordBindingNavigator.Name = "issuanseRecordBindingNavigator";
             this.issuanseRecordBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.issuanseRecordBindingNavigator.Size = new System.Drawing.Size(704, 27);
+            this.issuanseRecordBindingNavigator.Size = new System.Drawing.Size(939, 27);
             this.issuanseRecordBindingNavigator.TabIndex = 8;
             this.issuanseRecordBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -426,13 +455,13 @@ namespace LibraryDB
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
@@ -442,7 +471,7 @@ namespace LibraryDB
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // bindingNavigatorMoveFirstItem
@@ -451,7 +480,7 @@ namespace LibraryDB
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
             // 
             // bindingNavigatorMovePreviousItem
@@ -460,7 +489,7 @@ namespace LibraryDB
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
@@ -472,8 +501,9 @@ namespace LibraryDB
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(49, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
@@ -488,7 +518,7 @@ namespace LibraryDB
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
             // 
             // bindingNavigatorMoveLastItem
@@ -497,7 +527,7 @@ namespace LibraryDB
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator2
@@ -510,7 +540,7 @@ namespace LibraryDB
             this.issuanseRecordBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.issuanseRecordBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("issuanseRecordBindingNavigatorSaveItem.Image")));
             this.issuanseRecordBindingNavigatorSaveItem.Name = "issuanseRecordBindingNavigatorSaveItem";
-            this.issuanseRecordBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
+            this.issuanseRecordBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.issuanseRecordBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.issuanseRecordBindingNavigatorSaveItem.Click += new System.EventHandler(this.issuanseRecordBindingNavigatorSaveItem_Click);
             // 
@@ -532,9 +562,9 @@ namespace LibraryDB
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(136, 413);
+            this.panel1.Size = new System.Drawing.Size(181, 515);
             this.panel1.TabIndex = 9;
             // 
             // groupBox3
@@ -544,11 +574,11 @@ namespace LibraryDB
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.comboBox4);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 177);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(0, 218);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(136, 121);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(181, 149);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Search";
@@ -557,27 +587,28 @@ namespace LibraryDB
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(16, 63);
+            this.label2.Location = new System.Drawing.Point(21, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 18);
+            this.label2.Size = new System.Drawing.Size(151, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "no matches";
             this.label2.Visible = false;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 41);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Location = new System.Drawing.Point(21, 50);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(92, 20);
+            this.textBox2.Size = new System.Drawing.Size(121, 22);
             this.textBox2.TabIndex = 2;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(16, 83);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Location = new System.Drawing.Point(21, 102);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 22);
+            this.button4.Size = new System.Drawing.Size(73, 27);
             this.button4.TabIndex = 1;
             this.button4.Text = "Search";
             this.button4.UseVisualStyleBackColor = true;
@@ -586,20 +617,20 @@ namespace LibraryDB
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(16, 17);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Location = new System.Drawing.Point(21, 21);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(92, 21);
+            this.comboBox4.Size = new System.Drawing.Size(121, 24);
             this.comboBox4.TabIndex = 0;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.Location = new System.Drawing.Point(0, 385);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(0, 481);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 28);
+            this.button2.Size = new System.Drawing.Size(181, 34);
             this.button2.TabIndex = 2;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
@@ -608,10 +639,10 @@ namespace LibraryDB
             // button1
             // 
             this.button1.ImageKey = "(отсутствует)";
-            this.button1.Location = new System.Drawing.Point(2, 302);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(3, 372);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 29);
+            this.button1.Size = new System.Drawing.Size(172, 36);
             this.button1.TabIndex = 2;
             this.button1.Text = "Show all";
             this.button1.UseVisualStyleBackColor = true;
@@ -623,11 +654,11 @@ namespace LibraryDB
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.comboBox3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 81);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(0, 100);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(136, 96);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(181, 118);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filter";
@@ -636,29 +667,30 @@ namespace LibraryDB
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(16, 65);
+            this.label1.Location = new System.Drawing.Point(21, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 18);
+            this.label1.Size = new System.Drawing.Size(120, 22);
             this.label1.TabIndex = 3;
             this.label1.Text = "no matches";
             this.label1.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 41);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(21, 50);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(92, 20);
+            this.textBox1.Size = new System.Drawing.Size(121, 22);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(16, 17);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Location = new System.Drawing.Point(21, 21);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(92, 21);
+            this.comboBox3.Size = new System.Drawing.Size(121, 24);
             this.comboBox3.TabIndex = 0;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
@@ -668,10 +700,10 @@ namespace LibraryDB
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(136, 81);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(181, 100);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sorting";
@@ -679,32 +711,32 @@ namespace LibraryDB
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(16, 48);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Location = new System.Drawing.Point(21, 59);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(92, 21);
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 0;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 24);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(21, 30);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(92, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FormIssuanseRecord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 440);
+            this.ClientSize = new System.Drawing.Size(939, 542);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.issuanseRecordBindingNavigator);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormIssuanseRecord";
             this.Text = "FormIssuanseRecord";
             this.Load += new System.EventHandler(this.FormIssuanseRecord_Load);
@@ -783,5 +815,8 @@ namespace LibraryDB
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Add;
     }
 }
