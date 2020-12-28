@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,11 @@ namespace LibraryDB
     public partial class FormMain : Form
     {
         public static string ConnectionString = Properties.Settings.Default.LibraryConnectionString;
+        private SqlConnection connection;
         public FormMain()
         {
             InitializeComponent();
+            connection = new SqlConnection(FormMain.ConnectionString);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -101,12 +104,22 @@ namespace LibraryDB
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            int result;
+            connection.Open();
+            SqlCommand command = new SqlCommand("SELECT dbo.book_count()", connection);
+            result = (int)command.ExecuteScalar();
+            MessageBox.Show($"In library {result} books");
+            connection.Close();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            float result;
+            connection.Open();
+            SqlCommand command = new SqlCommand("SELECT dbo.total_price()", connection);
+            result = (float)command.ExecuteScalar();
+            MessageBox.Show($"Price of all books in library {result} UAH");
+            connection.Close();
         }
     }
 }
