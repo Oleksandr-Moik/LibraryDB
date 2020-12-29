@@ -130,6 +130,7 @@ namespace LibraryDB
             }
             ExcelApp.ActiveWorkbook.Saved = true;
             ExcelApp.Visible = true;
+            connection.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -137,7 +138,7 @@ namespace LibraryDB
             //student
             ReportDocument reportDocument = new ReportDocument();
             //reportDocument.Load("StudentReport.rpt");
-            reportDocument.SetDataSource(StudentDataTable());
+            //reportDocument.SetDataSource(StudentDataTable());
             //crystalReportViewer1.ReportSource = reportDocument;
             crystalReportViewer1.Visible = true;
         }

@@ -151,7 +151,9 @@ namespace LibraryDB
             connection.Open();
             SqlCommand sqlCommand = new SqlCommand("INSERT INTO Student VALUES " +
                 $"('{firstNameTextBox.Text}','{surNameTextBox.Text}','{byFatherTextBox.Text}'," +
-                $"'{groupTextBox.Text}','{birthDateDateTimePicker.Value.ToString()}','{phoneNumberTextBox.Text}')", connection);
+                $"'{groupTextBox.Text}'," +
+                $"'{birthDateDateTimePicker.Value.Year}-{birthDateDateTimePicker.Value.Month}-{birthDateDateTimePicker.Value.Day}'," +
+                $"'{phoneNumberTextBox.Text}')", connection);
             sqlCommand.ExecuteNonQuery();
             this.studentTableAdapter.Fill(this.libraryDataSet.Student);
             listBox1.SelectedIndex = listBox1.Items.Count - 1;
@@ -164,7 +166,7 @@ namespace LibraryDB
             SqlCommand sqlCommand = new SqlCommand($"UPDATE Student SET " +
                 $"FirstName = '{firstNameTextBox.Text}', SurName = '{surNameTextBox.Text}'," +
                 $"ByFather = '{byFatherTextBox.Text}', [Group] = '{groupTextBox.Text}', " +
-                $"BirthDate = '{birthDateDateTimePicker.Value}', PhoneNumber = '{phoneNumberTextBox.Text}'" +
+                $"BirthDate = '{birthDateDateTimePicker.Value.Year}-{birthDateDateTimePicker.Value.Month}-{birthDateDateTimePicker.Value.Day}', PhoneNumber = '{phoneNumberTextBox.Text}'" +
                 $"WHERE StudentId = {studentIdLabel1.Text}", connection);
             sqlCommand.ExecuteNonQuery();
             this.studentTableAdapter.Fill(this.libraryDataSet.Student);

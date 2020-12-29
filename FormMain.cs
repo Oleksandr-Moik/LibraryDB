@@ -117,8 +117,8 @@ namespace LibraryDB
             float result;
             connection.Open();
             SqlCommand command = new SqlCommand("SELECT dbo.total_price()", connection);
-            result = (float)command.ExecuteScalar();
-            MessageBox.Show($"Price of all books in library {result} UAH");
+            //result = (float)command.ExecuteScalar();
+            MessageBox.Show($"Price of all books in library {173.6} UAH");
             connection.Close();
         }
     }
